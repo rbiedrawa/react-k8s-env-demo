@@ -4,7 +4,5 @@ services:
     image: react-k8s:latest
     ports:
       - "8080:3000"
-    environment:
-      REACT_APP_MESSAGE: "Hello from docker compose env variable"
-#    volumes:
-#      - ./config-production.js:/usr/share/nginx/html/config.js
+    volumes:
+      - ./config-production.js:/usr/share/nginx/html/config.js

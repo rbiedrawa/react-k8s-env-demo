@@ -1,10 +1,11 @@
 import React from 'react';
+import Config from "../config/config";
 
-const { REACT_APP_MESSAGE } = process.env;
 
-
-export default () => (
+const EnvComponent = () => (
   <header>
-    <p>{REACT_APP_MESSAGE}</p>
+    <p>{Config.message}</p>
   </header>
 );
+
+export default EnvComponent;
