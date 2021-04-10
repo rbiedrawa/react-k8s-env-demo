@@ -1,8 +1,9 @@
 version: "3"
 services:
   web:
-    image: react-k8s:latest
+    image: react-k8s-env-demo:latest
+    build: .
     ports:
-      - "8080:3000"
+      - "3000:3000"
     volumes:
       - ./config-production.js:/usr/share/nginx/html/config.js

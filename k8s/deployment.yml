@@ -2,22 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: react-app-deployment
-  name: react-app-deployment
+    app: react-k8s-env-demo
+  name: react-k8s-env-demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: react-app
+      app: react-k8s-env-demo
   template:
     metadata:
       labels:
-        app: react-app
+        app: react-k8s-env-demo
     spec:
       containers:
-        - name: react-app-demo
-          image: react-k8s
-          imagePullPolicy: Never #used for getting it to pull local images
+        - name: react-k8s-env-demo-demo
+          image: react-k8s-env-demo
+          imagePullPolicy: Never
           ports:
             - containerPort: 3000
           livenessProbe:
@@ -31,7 +31,6 @@ spec:
               path: /
               port: 3000
           volumeMounts:
-            #override config.js file
             - name: config
               mountPath: "/usr/share/nginx/html/config.js"
               subPath: "config.js"
@@ -39,7 +38,7 @@ spec:
       volumes:
         - name: config
           configMap:
-            name: react-app-config
+            name: react-k8s-env-demo
             items:
               - key: "web.properties"
                 path: "config.js"

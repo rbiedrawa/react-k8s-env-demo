@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2beta13
+kind: Config
+metadata:
+  name: react-k8-s
+build:
+  artifacts:
+  - image: react-k8s-env-demo
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - k8s/configmap.yml
+    - k8s/deployment.yml
+    - k8s/service.yml

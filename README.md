@@ -1,33 +1,43 @@
-# React Env variables demo
+# React k8s env variables (demo)
 
-Example how to use inject env variables into react app running in k8s and docker
-
-### Getting Started React 
-
-docker build -t react-k8s .
-
-### Run docker compose 
-
-```
-docker-compose up -d
-```
-
-### Deploy react app to k8s
-```
-kubectl create ns react-app-demo
-
-kubectl apply -f k8s/cfg.yml -n react-app-demo
-kubectl apply -f k8s/ -n react-app-demo
-
-kubectl port-forward -n react-app-demo svc/react-app-service 7777:80 
-
-curl http://localhost:7777/config.js
-
-# output window.APP_MESSAGE= "Hello from k8s production env!!!"
-
-kubectl delete -f k8s/ -n react-app-demo
-or
-kubectl delete all --all -n react-app-demo
-```
+This repository demonstrates how to inject env variables into react application running inside kubernetes or docker-compose.
 
 
+## Getting Started
+
+### Prerequisite
+
+* Docker
+* Kubernetes
+
+### Usage
+
+#### Docker Compose
+
+* Start docker compose.
+  ```shell
+  docker-compose up -d 
+  ```
+
+* Open your web browser and go to react app [home page](http://localhost:3000/).
+
+* Stop docker compose.
+  ```shell
+  docker-compose down -v
+  ```
+
+#### Kubernetes
+
+* Start application using skaffold.
+  ```shell
+  skaffold dev --port-forward
+  ```
+* Open your web browser and go to react app [home page](http://localhost:3000/).
+
+* Stop skaffold dev (`CTRL + C`).
+
+## References
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.

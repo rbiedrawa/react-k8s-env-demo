@@ -1,5 +1,5 @@
 {
-  "name": "react-k8s",
+  "name": "react-k8s-env-demo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

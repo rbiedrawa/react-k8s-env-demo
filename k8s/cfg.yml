@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: react-app-config
-data:
-  web.properties: |
-    window.APP_MESSAGE= "Hello from k8s production env!!!"

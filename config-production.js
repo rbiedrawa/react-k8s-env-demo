@@ -1,1 +1,1 @@
-window.APP_MESSAGE = "Hello from production"
+window.APP_MESSAGE = "Hello from docker-compose production env."
