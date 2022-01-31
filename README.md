@@ -5,7 +5,7 @@ This repository demonstrates how to inject env variables into react application 
 
 ## Getting Started
 
-### Prerequisite
+### Prerequisites
 
 * Docker
 * Kubernetes
